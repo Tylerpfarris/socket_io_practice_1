@@ -4,17 +4,17 @@
 import React, { useEffect, useRef } from 'react';
 import P5 from 'p5';
 import io from 'socket.io-client';
-const socket = io('https://salty-chamber-55261.herokuapp.com/',
-    {
-        withCredentials: true,
+const socket = io('https://salty-chamber-55261.herokuapp.com/'
+    // {
+    //     withCredentials: true,
         
-        extraHeaders: {
-            'Access-Control-Allow-Origin': '*',
-            'Access-Control-Allow-Methods': 'GET,POST,OPTIONS',
-            'Access-Control-Allow-Headers': 'Origin, Content-Type, X-Auth-Token',
-            'Access-Control-Allow-Credentials': true
-        }
-    }
+    //     extraHeaders: {
+    //         'Access-Control-Allow-Origin': '*',
+    //         'Access-Control-Allow-Methods': 'GET,POST,OPTIONS',
+    //         'Access-Control-Allow-Headers': 'Origin, Content-Type, X-Auth-Token',
+    //         'Access-Control-Allow-Credentials': true
+    //     }
+    // }
 
 );
 
