@@ -1,7 +1,11 @@
 import React, { useEffect, useRef } from 'react';
 import P5 from 'p5';
 import io from 'socket.io-client';
-const socket = io('https://salty-chamber-55261.herokuapp.com/');
+const socket = io('https://salty-chamber-55261.herokuapp.com/', {
+    cors: {
+        origin: ['https://modest-hoover-a49330.netlify.app', 'https://salty-chamber-55261.herokuapp.com/', 'http://modest-hoover-a49330.netlify.app', 'http://salty-chamber-55261.herokuapp.com/']
+    }
+});
 
 
 // // Start the socket connection
