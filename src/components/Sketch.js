@@ -16,7 +16,7 @@ export const SketchComponent = () => {
    
     const Sketch = (p) => {
         p.setup = () => {
-            p.createCanvas(800, 800);
+            p.createCanvas(2000, 2000);
             p.background(255, 255, 255);
             
             socket.on('mouse response', data => {
