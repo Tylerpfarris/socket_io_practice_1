@@ -72,7 +72,7 @@
     "rest-spread-spacing": "error",
     "prefer-arrow-callback": "error",
     "object-shorthand": ["error", "always"],
-    "max-len": "error",
+    // "max-len": "error",
     "jsx-quotes": "error",
     "babel/no-invalid-this": 1,
     "babel/semi": 0
