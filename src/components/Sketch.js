@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import P5 from 'p5';
-import io from 'socket.io-client';
+import { io } from 'socket.io-client';
 const socket = io('https://salty-chamber-55261.herokuapp.com/', {
     withCredentials: true,
 });
