@@ -1,46 +1,16 @@
-// https://cors-anywhere.herokuapp.com/
-//https://salty-chamber-55261.herokuapp.com/
-//http://localhost:8000
 import React, { useEffect, useRef } from 'react';
 import P5 from 'p5';
 import io from 'socket.io-client';
-const socket = io('https://salty-chamber-55261.herokuapp.com/'
-    // {
-    //     withCredentials: true,
-        
-    //     extraHeaders: {
-    //         'Access-Control-Allow-Origin': '*',
-    //         'Access-Control-Allow-Methods': 'GET,POST,OPTIONS',
-    //         'Access-Control-Allow-Headers': 'Origin, Content-Type, X-Auth-Token',
-    //         'Access-Control-Allow-Credentials': true
-    //     }
-    // }
-
-);
-
-
-// // Start the socket connection
-
-
-// // Callback function
-
-
+const socket = io('https://salty-chamber-55261.herokuapp.com/');
 
 export const SketchComponent = () => {
-    // const colorRef = useRef(null);
-    // const lineWeightRef = useRef(null);
     const color = '#FF0000'; 
     const strokeWidth = 4;
-    // const myRef = useRef();
     const canvasRef = useRef();
 
     useEffect(() => {
-        // myRef.current = io();
         const myp5 = new P5(Sketch, canvasRef.current);
-
-       
         return myp5;
-    
     }, []);
 
    
@@ -54,7 +24,6 @@ export const SketchComponent = () => {
                 p.strokeWeight(data.strokeWidth);
                 p.line(data.x, data.y, data.px, data.py);
             });
-
         };
 
         p.mouseDragged = () => {
@@ -72,16 +41,10 @@ export const SketchComponent = () => {
                 color,
                 strokeWidth,
             };
-
-            socket.emit('transmit mouse', data);
-            console.log(socket.emit('transmit mouse', data));
-      
+            socket.emit('transmit mouse', data);   
         }
-
-
     };
     return (
         <div ref={canvasRef}></div>
-
     );
 };
