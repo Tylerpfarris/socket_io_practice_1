@@ -7,21 +7,17 @@ import io from 'socket.io-client';
 const socket = io('https://salty-chamber-55261.herokuapp.com/',
     {
         withCredentials: true,
-        extraHeaders: {
-            'Access-Control-Allow-Origin': '*',
-            'Access-Control-Allow-Methods': 'GET,POST,OPTIONS',
-            'Access-Control-Allow-Headers': 'Origin, Content-Type, X-Auth-Token',
+        
+        transportOptions: {
+            polling: {
+                extraHeaders: {
+                    'Access-Control-Allow-Origin': '*',
+                    'Access-Control-Allow-Methods': 'GET,POST,OPTIONS',
+                    'Access-Control-Allow-Headers': 'Origin, Content-Type, X-Auth-Token',
+                    'Access-Control-Allow-Credentials': true
+                }
+            }
         }
-        // transportOptions: {
-        //     polling: {
-        //         extraHeaders: {
-        //             'Access-Control-Allow-Origin': 'https://modest-hoover-a49330.netlify.app',
-        //             'Access-Control-Allow-Methods': 'GET,POST,OPTIONS',
-        //             'Access-Control-Allow-Headers': 'req-header',
-        //             'Access-Control-Allow-Credentials': true
-        //         }
-        //     }
-        // }
     }
 );
 
