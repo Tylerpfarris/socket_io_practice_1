@@ -7,6 +7,7 @@ import io from 'socket.io-client';
 const socket = io('https://salty-chamber-55261.herokuapp.com/',
     {
         withCredentials: true,
+        extraHeaders: '*'
         // transportOptions: {
         //     polling: {
         //         extraHeaders: {
