@@ -4,13 +4,13 @@
 import React, { useEffect, useRef } from 'react';
 import P5 from 'p5';
 import io from 'socket.io-client';
-const socket = io('http://salty-chamber-55261.herokuapp.com/',
+const socket = io('https://salty-chamber-55261.herokuapp.com/',
     {
         withCredentials: true,
         transportOptions: {
             polling: {
                 extraHeaders: {
-                    'Access-Control-Allow-Origin': '*',
+                    'Access-Control-Allow-Origin': 'http://modest-hoover-a49330.netlify.app',
                     'Access-Control-Allow-Methods': 'GET,POST,OPTIONS',
                     'Access-Control-Allow-Headers': 'req-header',
                     'Access-Control-Allow-Credentials': true
