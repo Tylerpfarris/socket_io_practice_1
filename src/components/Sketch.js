@@ -1,9 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import P5 from 'p5';
 import io from 'socket.io-client';
-const socket = io('https://salty-chamber-55261.herokuapp.com/', {
-    withCredentials: true,
-});
+const socket = io('https://salty-chamber-55261.herokuapp.com/');
 
 
 // // Start the socket connection
