@@ -10,7 +10,7 @@ const socket = io('https://salty-chamber-55261.herokuapp.com/',
         transportOptions: {
             polling: {
                 extraHeaders: {
-                    'Access-Control-Allow-Origin': '*',
+                    'Access-Control-Allow-Origin': 'https://salty-chamber-55261.herokuapp.com/',
                     'Access-Control-Allow-Methods': 'GET,POST,OPTIONS',
                     'Access-Control-Allow-Headers': 'req-header',
                     'Access-Control-Allow-Credentials': true
