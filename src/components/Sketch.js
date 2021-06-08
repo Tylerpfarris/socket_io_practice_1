@@ -1,21 +1,22 @@
 // https://cors-anywhere.herokuapp.com/
-
+//https://salty-chamber-55261.herokuapp.com/
 import React, { useEffect, useRef } from 'react';
 import P5 from 'p5';
 import io from 'socket.io-client';
-const socket = io('https://salty-chamber-55261.herokuapp.com/', {
-    withCredentials: true,
-    transportOptions: {
-        polling: {
-            extraHeaders: {
-                'Access-Control-Allow-Origin': '*',
-                'Access-Control-Allow-Methods': 'GET,POST',
-                'Access-Control-Allow-Headers': 'my-custom-header',
-                'Access-Control-Allow-Credentials': true
-            }
-        }
-    }
-}
+const socket = io('http://localhost:8000',
+    // {
+    //     withCredentials: true,
+    //     transportOptions: {
+    //         polling: {
+    //             extraHeaders: {
+    //                 'Access-Control-Allow-Origin': '*',
+    //                 'Access-Control-Allow-Methods': 'GET,POST',
+    //                 'Access-Control-Allow-Headers': 'my-custom-header',
+    //                 'Access-Control-Allow-Credentials': true
+    //             }
+    //         }
+    //     }
+    // }
 );
 
 
