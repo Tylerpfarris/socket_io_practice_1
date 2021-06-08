@@ -8,6 +8,16 @@ export const SketchComponent = () => {
     const strokeWidth = 4;
     const canvasRef = useRef();
 
+    const randomColor = () => {
+        let hexColor = '#';
+        for(let i = 0; i < 6; i++) {
+            const random = Math.random();
+            const bit = (random * 16) | 0;
+            hexColor += bit.toString(16);
+        }
+        return hexColor;
+    };
+
     useEffect(() => {
         const myp5 = new P5(Sketch, canvasRef.current);
         return myp5;
@@ -27,7 +37,7 @@ export const SketchComponent = () => {
         };
 
         p.mouseDragged = () => {
-            p.stroke('#FF0000');
+            p.stroke(randomColor());
             p.strokeWeight(4);
             p.line(p.mouseX, p.mouseY, p.pmouseX, p.pmouseY);
             sendMouse(p.mouseX, p.mouseY, p.pmouseX, p.pmouseY);
