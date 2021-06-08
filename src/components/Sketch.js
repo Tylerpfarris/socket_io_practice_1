@@ -12,7 +12,7 @@ const socket = io('https://salty-chamber-55261.herokuapp.com/',
                 extraHeaders: {
                     'Access-Control-Allow-Origin': '*',
                     'Access-Control-Allow-Methods': 'GET,POST',
-                    'Access-Control-Allow-Headers': 'my-custom-header',
+                    'Access-Control-Allow-Headers': 'req-header',
                     'Access-Control-Allow-Credentials': true
                 }
             }
