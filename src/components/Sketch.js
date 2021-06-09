@@ -4,8 +4,8 @@ import io from 'socket.io-client';
 const socket = io('https://salty-chamber-55261.herokuapp.com/');
 
 export const SketchComponent = () => {
-    const color = randomColor();
-    const strokeWidth = 25;
+    const color = '#FF0000'; 
+    const strokeWidth = 4;
     const canvasRef = useRef();
 
     const randomColor = () => {
@@ -27,7 +27,7 @@ export const SketchComponent = () => {
     const Sketch = (p) => {
         p.setup = () => {
             p.createCanvas(2000, 2000);
-            p.background(color);
+            p.background(randomColor());
             
             socket.on('mouse response', data => {
                 p.stroke(data.color);
@@ -37,7 +37,7 @@ export const SketchComponent = () => {
         };
 
         p.mouseDragged = () => {
-            p.stroke(color);
+            p.stroke(randomColor());
             p.strokeWeight(4);
             p.line(p.mouseX, p.mouseY, p.pmouseX, p.pmouseY);
             sendMouse(p.mouseX, p.mouseY, p.pmouseX, p.pmouseY);
