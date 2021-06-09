@@ -13,9 +13,12 @@ const randomColor = () => {
     return hexColor;
 };
 
+const randomNumber = () => {
+    return Math.ceil(Math.random() * 200);
+};
 export const SketchComponent = () => {
     const color = randomColor(); 
-    const strokeWidth = 4;
+    const strokeWidth = randomNumber();
     const canvasRef = useRef();
 
 
