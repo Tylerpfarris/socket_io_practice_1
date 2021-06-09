@@ -43,7 +43,7 @@ export const SketchComponent = () => {
 
         p.mouseDragged = () => {
             p.stroke(randomColor());
-            p.strokeWeight(4);
+            p.strokeWeight(strokeWidth);
             p.line(p.mouseX, p.mouseY, p.pmouseX, p.pmouseY);
             sendMouse(p.mouseX, p.mouseY, p.pmouseX, p.pmouseY);
         }; 
