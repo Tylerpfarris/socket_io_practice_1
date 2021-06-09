@@ -27,7 +27,7 @@ export const SketchComponent = () => {
     const Sketch = (p) => {
         p.setup = () => {
             p.createCanvas(2000, 2000);
-            p.background(randomColor());
+            p.background(color);
             
             socket.on('mouse response', data => {
                 p.stroke(data.color);
@@ -37,7 +37,7 @@ export const SketchComponent = () => {
         };
 
         p.mouseDragged = () => {
-            p.stroke(randomColor());
+            p.stroke(color);
             p.strokeWeight(4);
             p.line(p.mouseX, p.mouseY, p.pmouseX, p.pmouseY);
             sendMouse(p.mouseX, p.mouseY, p.pmouseX, p.pmouseY);
