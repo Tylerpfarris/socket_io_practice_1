@@ -4,8 +4,8 @@ import io from 'socket.io-client';
 const socket = io('https://salty-chamber-55261.herokuapp.com/');
 
 export const SketchComponent = () => {
-    const color = '#000000'; 
-    const strokeWidth = 4;
+    const color = randomColor();
+    const strokeWidth = 25;
     const canvasRef = useRef();
 
     const randomColor = () => {
