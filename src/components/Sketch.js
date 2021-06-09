@@ -3,20 +3,22 @@ import P5 from 'p5';
 import io from 'socket.io-client';
 const socket = io('https://salty-chamber-55261.herokuapp.com/');
 
+const randomColor = () => {
+    let hexColor = '#';
+    for(let i = 0; i < 6; i++) {
+        const random = Math.random();
+        const bit = (random * 16) | 0;
+        hexColor += bit.toString(16);
+    }
+    return hexColor;
+};
+
 export const SketchComponent = () => {
-    const color = '#FF0000'; 
+    const color = randomColor(); 
     const strokeWidth = 4;
     const canvasRef = useRef();
 
-    const randomColor = () => {
-        let hexColor = '#';
-        for(let i = 0; i < 6; i++) {
-            const random = Math.random();
-            const bit = (random * 16) | 0;
-            hexColor += bit.toString(16);
-        }
-        return hexColor;
-    };
+
 
     useEffect(() => {
         const myp5 = new P5(Sketch, canvasRef.current);
